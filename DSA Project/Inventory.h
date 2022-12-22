@@ -6,8 +6,10 @@
 #define DSA_PROJECT_INVENTORY_H
 #include "IEntity.h"
 #include "Item.h"
+#include "Product.h"
 #include <iostream>
 #include <iomanip>
+#include <vector>
 class Item;
 class Inventory : public IEntity {
 private:
@@ -46,6 +48,8 @@ public:
     bool doesItemExistInInventory(int itemID);
 
     Item * getHeadOfList();
+
+    void decrementItemQuantityAfterCheckout(const std::vector<Product>& products);
 
     const std::string getClassId() const;
 

@@ -57,7 +57,7 @@ void DataLayer::read(User *user) {
     file.close();
 }
 
-void DataLayer::Update(Inventory *inventory) {
+void DataLayer::update(Inventory *inventory) {
     std::ofstream file;
     file.open("Inventory.tsv");
     Item * trav = inventory->getHeadOfList();

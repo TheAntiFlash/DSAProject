@@ -55,7 +55,8 @@ void Client::checkout(Inventory *inventory, TransactionHistory * transactionHist
         transactionHistory->insert(uniqueTransactionID,this->getUsername(), products, tPrice);
         DataLayer dl;
         dl.update(transactionHistory);
-
+        inventory->decrementItemQuantityAfterCheckout(products);
+        dl.update(inventory);
 
         std::cout << std::endl << std::setw(51)<< "***************************************";
         std::cout << "\n"

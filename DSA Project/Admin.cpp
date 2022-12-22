@@ -26,7 +26,7 @@ void Admin::addToInventory(Inventory *inventory, int itemID, std::string product
         else {
             inventory->insert(itemID, productName, quantity, price);
             DataLayer dl;
-            dl.Update(inventory);
+            dl.update(inventory);
         }
     }
     else{
@@ -48,7 +48,7 @@ void Admin::deleteItemFromInventory(Inventory * inventory, int itemID) {
         if (inventory->doesItemExistInInventory(itemID)) {
             inventory->deleteItem(itemID);
             DataLayer dl;
-            dl.Update(inventory);
+            dl.update(inventory);
         }
     }
 }

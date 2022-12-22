@@ -44,7 +44,7 @@ public:
      * by rewriting the file with the contents of the linked list.
      * @param inventory
      */
-    void Update(Inventory *inventory);
+    void update(Inventory *inventory);
 
 };
 

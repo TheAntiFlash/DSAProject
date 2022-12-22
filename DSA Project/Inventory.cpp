@@ -116,3 +116,16 @@ bool Inventory::doesItemExistInInventory(int itemID) {
     }
     return itemIdExists;
 }
+
+void Inventory::decrementItemQuantityAfterCheckout(const std::vector<Product>& products) {
+    for (const auto &item: products){
+        Item * trav = head;
+
+        while(trav!= nullptr){
+            if(item.getItemId() == trav->getItemID()){
+                trav->quantity -= item.getQuantity();
+            }
+            trav = trav->next;
+        }
+    }
+}

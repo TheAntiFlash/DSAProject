@@ -4,12 +4,9 @@
 #include "Admin.h"
 #include "Client.h"
 #include <ctime>
-void function(){
-    std::cout << "This function does nothing";
-}
+
 int main() {
     srand(time(0));
-    function();
     /*
     Checking if inventory is reading correctly
     Inventory inventory;
@@ -39,7 +36,6 @@ int main() {
     //Admin::signUp("ahmed","lkj123");
 
 
-    /*
     std::string user = "faizan";
     std::string pass = "qwe321";
     Client client(user, pass);
@@ -54,6 +50,7 @@ int main() {
     client.addToCart(2);
     client.checkout(&inventory, &transactionHistory);
 
+    /*
     //transactionHistory.displayTransactionHistory(&inventory);
 
     Inventory inventory;
