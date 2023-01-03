@@ -49,7 +49,7 @@ void DataLayer::read(User *user) {
         }
     }
     if(loggedIn){
-        std::cout << "User: " << user->getUsername() << " Successfully logged in!";
+        std::cout << "Account " << user->getUsername() << " Successfully logged in!";
     }
     else{
         std::cout << "Invalid Username OR Password";

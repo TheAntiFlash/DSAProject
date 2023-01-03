@@ -44,16 +44,24 @@ public:
      * displays all arr in linkedList Inventory
      */
     void displayInventory();
+    void updateItemName(int itemID,std::string productName);
+    void updateItemQuantity(int itemID,int quantity);
+
 
     bool doesItemExistInInventory(int itemID);
 
     Item * getHeadOfList();
+
+    int getTotalQuantityOfItemsInInventory();
+
 
     void decrementItemQuantityAfterCheckout(const std::vector<Product>& products);
 
     const std::string getClassId() const;
 
     int getTotalItemsInInventory() const;
+
+    void updateItemPrice(int itemID, float price);
 };
 
 

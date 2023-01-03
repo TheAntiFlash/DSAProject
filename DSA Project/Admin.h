@@ -13,6 +13,8 @@
 
 class Admin : public User{
 public:
+    Admin();
+    void displayList();
     Admin(std::string user, std::string pass);
 
     const std::string getClassId() const override;

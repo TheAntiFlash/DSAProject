@@ -15,7 +15,10 @@ private:
     Cart * cart;
     bool isCartCreated;
 public:
+    Client();
+
     Client(std::string user, std::string pass);
+    void ClDisplayList();
     const std::string getClassId() const override;
 
     /**
@@ -29,7 +32,14 @@ public:
 
     static bool signUp(std::string username, std::string password);
 
+    void showCart(Inventory *inventory);
+
+    void showCartPrice(Inventory *inventory);
+
     void checkout(Inventory *inventory, TransactionHistory * transactionHistory);
+
+    void removeCartItem(Inventory *inventory);
+
 };
 
 

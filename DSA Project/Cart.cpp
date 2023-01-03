@@ -84,3 +84,9 @@ void Cart::deleteItem(int itemID, int* arr) {
     }
 
 }
+
+void Cart::RemoveItem() {
+    pop();
+    std::cout<<"Item Removed...."<<std::endl;
+}
+

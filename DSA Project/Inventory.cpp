@@ -88,6 +88,7 @@ void Inventory::deleteItem(int itemID) {
             std::cout << "this ran";
         }
         trav = trav->next;
+
     }
     if(trav->prev != nullptr){
         trav->prev->next = trav->next;
@@ -128,4 +129,55 @@ void Inventory::decrementItemQuantityAfterCheckout(const std::vector<Product>& p
             trav = trav->next;
         }
     }
+}
+
+void Inventory::updateItemPrice(int itemID, float price) {
+    Item * trav = head;
+
+    while(trav != nullptr){
+        if(trav->itemID == itemID){
+            break;
+            std::cout << "this ran";
+        }
+        trav = trav->next;
+
+    }
+    trav->price=price;
+}
+
+void Inventory::updateItemName(int itemID, std::string productName) {
+    Item * trav = head;
+
+    while(trav != nullptr){
+        if(trav->itemID == itemID){
+            break;
+            std::cout << "this ran";
+        }
+        trav = trav->next;
+
+    }
+    trav->productName =productName;
+}
+
+void Inventory::updateItemQuantity(int itemID, int quantity) {
+    Item * trav = head;
+
+    while(trav != nullptr){
+        if(trav->itemID == itemID){
+            break;
+            std::cout << "this ran";
+        }
+        trav = trav->next;
+
+    }
+    trav->quantity =quantity;
+}
+int Inventory::getTotalQuantityOfItemsInInventory() {
+    Item * trav = head;
+    int quantityItems = 0;
+    while(trav != nullptr){
+        quantityItems += trav->quantity;
+        trav = trav->next;
+    }
+    return quantityItems;
 }

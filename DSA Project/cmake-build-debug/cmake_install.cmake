@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Yahya/CLionProjects/DSA Project
+# Install script for directory: F:/Hamza/uni work/3rd Sem/DSA/project/DSA Project v0.8/DSA Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/Yahya/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2022.3/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Yahya/CLionProjects/DSA Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "F:/Hamza/uni work/3rd Sem/DSA/project/DSA Project v0.8/DSA Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

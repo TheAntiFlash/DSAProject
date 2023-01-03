@@ -3,6 +3,23 @@
 //
 
 #include "Admin.h"
+Admin::Admin()
+{
+    //empty constructor
+}
+
+void Admin::displayList()
+{
+    std::cout<<"\n\t\tWelcome to Admin Portal.";
+    std::cout<<"\n\n\tSelect from Options given below: ";
+    std::cout<<"\n\n1)Add to Inventory.";
+    std::cout<<"\n\n2)Delete From Inventory.";
+    std::cout<<"\n\n3)Display Transaction History.";
+    std::cout<<"\n\n4)Display Inventory";
+    std::cout<<"\n\n5)Edit inventory.";
+    std::cout<<"\n\n6)Exit Portal";
+    std::cout<<"\n\nEnter your Choice -> ";
+}
 Admin::Admin(std::string user, std::string pass) {
     isLoggedIn = false;
     username = user;
@@ -41,6 +58,48 @@ void Admin::editInventory(Inventory *inventory, int itemID) {
      * DataLayer dl;
      * dl.update(*inventory);
      */
+    if(isLoggedIn) {
+        if (inventory->doesItemExistInInventory(itemID)) {
+           std::cout<<"Select option to edit "<<std::endl
+                <<"1-Product name "<<std::endl
+                <<"2-Price "<<std::endl
+                <<"3-Quantity "<<std::endl;
+           int choice;
+           std::cout<<"choice: ";
+           std::cin>>choice;
+           while(choice>3 || choice<1){
+               std::cout<<"Enter a number between 1-3: ";
+               std::cin>>choice;
+           }
+           if(choice==1){
+               std::string Pname;
+               std::cout<<"Enter new Product Name: ";
+               std::cin>>Pname;
+               inventory->updateItemName(itemID,Pname);
+           }
+           else if(choice==2){
+               float Price;
+               std::cout<<"Enter new Product Price: ";
+               std::cin>>Price;
+               inventory->updateItemPrice(itemID,Price);
+           }else{
+               int Quantity;
+               std::cout<<"Enter new Product Quantity : ";
+               std::cin>>Quantity;
+               inventory->updateItemQuantity(itemID,Quantity);
+           }
+            DataLayer dl;
+            dl.update(inventory);
+
+        }
+        else{
+            std::cout << "\n\t*********ERROR**********"
+                         "\n\tItem ID DOES NOT Exist";
+        }
+    }
+
+
+
 }
 
 void Admin::deleteItemFromInventory(Inventory * inventory, int itemID) {
@@ -49,6 +108,10 @@ void Admin::deleteItemFromInventory(Inventory * inventory, int itemID) {
             inventory->deleteItem(itemID);
             DataLayer dl;
             dl.update(inventory);
+        }
+        else{
+            std::cout << "\n\t*********ERROR**********"
+                         "\n\tItem ID DOES NOT Exist";
         }
     }
 }

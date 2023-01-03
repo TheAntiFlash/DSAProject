@@ -40,6 +40,7 @@ public:
     float getTotalPrice(Inventory *inventory);
 
     std::vector<Product> getProductsInCart( Inventory * inventory);
+    void RemoveItem();
 
 };
 
